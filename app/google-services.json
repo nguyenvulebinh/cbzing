@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "386392661741",
+    "firebase_url": "https://nguyenvulebinh-cbzing.firebaseio.com",
+    "project_id": "nguyenvulebinh-cbzing",
+    "storage_bucket": "nguyenvulebinh-cbzing.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:386392661741:android:dcd0e1625b78e2bd",
+        "android_client_info": {
+          "package_name": "nb.cblink.zing"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "386392661741-5i9n0ln24219pi1l77upp3kdh39epkif.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "nb.cblink.zing",
+            "certificate_hash": "A04063335AD573CE67E0036C31118DC28C862BAA"
+          }
+        },
+        {
+          "client_id": "386392661741-8otlo4jj0ehvq59uqvum4qrrti7fbdq6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNwhAN1exTExr1pQcAijJWK6ASYrAZGmw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "386392661741-8otlo4jj0ehvq59uqvum4qrrti7fbdq6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

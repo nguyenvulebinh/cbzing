@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data class="TrainFragmentBinding">
+        <variable
+            name="tmv"
+            type="nb.cblink.zing.viewmodel.TrainModelView"/>
+    </data>
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:padding="10dp">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:layout_marginTop="15dp"
+            card_view:cardBackgroundColor="@color/colorCardView"
+            card_view:cardCornerRadius="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:text="Cách dùng ZDownload"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_marginTop="15dp"
+                    card_view:cardBackgroundColor="@color/colorCardView"
+                    card_view:cardCornerRadius="10dp"
+                    android:onClick="@{() -> tmv.trainAppZingMP3()}">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Tải nội dung từ app ZingMP3"
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_marginTop="15dp"
+                    card_view:cardBackgroundColor="@color/colorCardView"
+                    card_view:cardCornerRadius="10dp"
+                    android:onClick="@{() -> tmv.trainWebZingMP3()}">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Tải nội dung từ web ZingMP3"
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_marginTop="15dp"
+                    card_view:cardBackgroundColor="@color/colorCardView"
+                    card_view:cardCornerRadius="10dp"
+                    android:onClick="@{() -> tmv.trainAppZingTV()}">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Tải nội dung từ app ZingTV"
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_marginTop="15dp"
+                    card_view:cardBackgroundColor="@color/colorCardView"
+                    card_view:cardCornerRadius="10dp"
+                    android:onClick="@{() -> tmv.trainWebZingTV()}">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Tải nội dung từ web ZingTV"
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+    </ScrollView>
+</layout>

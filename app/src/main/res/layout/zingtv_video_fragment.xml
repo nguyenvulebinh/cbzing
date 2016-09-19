@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
+
+    <data class="ZingTVVideoBinding">
+
+        <variable
+            name="ztvvideomv"
+            type="nb.cblink.zing.viewmodel.ZingTVVideoModelView" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:visibility="@{ztvvideomv.visibiLoadingLayout}"
+                card_view:cardBackgroundColor="@color/colorCardView"
+                card_view:cardCornerRadius="4dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:gravity="center_vertical">
+
+                    <ProgressBar
+                        android:id="@+id/progressBar"
+                        style="?android:attr/progressBarStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:visibility="@{ztvvideomv.visibiLoading}" />
+
+                    <TextView
+                        android:id="@+id/label_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:text="Tên video:"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:visibility="@{ztvvideomv.visibiTXTShortInfo}" />
+
+                    <TextView
+                        android:id="@+id/song_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@id/label_name"
+                        android:ellipsize="end"
+                        android:lines="1"
+                        android:text="@{ztvvideomv.txtVideoName}"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/colorGetDone"
+                        android:visibility="@{ztvvideomv.visibiTXTShortInfo}" />
+
+                    <TextView
+                        android:id="@+id/label_artist"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@id/label_name"
+                        android:text="Thể loại:"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:visibility="@{ztvvideomv.visibiTXTShortInfo}" />
+
+                    <TextView
+                        android:id="@+id/artist_song"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/song_name"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@id/label_artist"
+                        android:ellipsize="end"
+                        android:lines="1"
+                        android:text="@{ztvvideomv.txtTypeVideo}"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/colorGetDone"
+                        android:visibility="@{ztvvideomv.visibiTXTShortInfo}" />
+
+                    <TextView
+                        android:id="@+id/label_descrip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@id/label_artist"
+                        android:text="Độ dài:"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:visibility="@{ztvvideomv.visibiTXTShortInfo}" />
+
+                    <TextView
+                        android:id="@+id/descrip_song"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/artist_song"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@id/label_descrip"
+                        android:text="@{ztvvideomv.txtDuration}"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/colorGetDone"
+                        android:visibility="@{ztvvideomv.visibiTXTShortInfo}" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:visibility="@{ztvvideomv.visibiClickADPlease}"
+                card_view:cardBackgroundColor="@color/colorCardView"
+                card_view:cardCornerRadius="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/text_please"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Để giúp chúng tôi có thêm động lực và kinh phí để duy trì ứng dụng mong bạn hãy nhấn vào quảng cáo trước khi tải"
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                    <Button
+                        android:id="@+id/btnSkipAD"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:background="#00000000"
+                        android:onClick="@{() -> ztvvideomv.onClickSkipAD()}"
+                        android:text="Đồng ý"
+                        android:visibility="@{ztvvideomv.visibiButtonlickADPlease}" />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:visibility="@{ztvvideomv.visibiMainContent}"
+                card_view:cardBackgroundColor="@color/colorCardView"
+                card_view:cardCornerRadius="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/image_view_video"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/video_default" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp">
+
+                        <ImageButton
+                            android:id="@+id/play_song"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:background="@color/colorButton"
+                            android:onClick="@{() -> ztvvideomv.onClickPlay()}"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/play" />
+
+
+                        <Spinner
+                            android:id="@+id/choose_quanlity_song"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="4"
+                            android:clipToPadding="false" />
+
+                        <ImageButton
+                            android:id="@+id/download_song"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight="2"
+                            android:background="@color/colorButton"
+                            android:onClick="@{() -> ztvvideomv.onClickDownload()}"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/download" />
+
+                        <ImageButton
+                            android:id="@+id/share_song"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight="2"
+                            android:background="@color/colorButton"
+                            android:onClick="@{() -> ztvvideomv.onClickShareVideo()}"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/share" />
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:gravity="center|left">
+
+                        <TextView
+                            android:id="@+id/label_nameDetail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:text="Tên video:"
+                            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                        <TextView
+                            android:id="@+id/song_nameDetail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_toRightOf="@id/label_nameDetail"
+                            android:ellipsize="end"
+                            android:lines="1"
+                            android:text="@{ztvvideomv.txtVideoName}"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="@color/colorGetDone" />
+
+                        <TextView
+                            android:id="@+id/label_artistDetail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_below="@id/label_nameDetail"
+                            android:text="Thể loại:"
+                            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                        <TextView
+                            android:id="@+id/artist_songDetail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/song_nameDetail"
+                            android:layout_marginLeft="10dp"
+                            android:layout_toRightOf="@id/label_artistDetail"
+                            android:ellipsize="end"
+                            android:lines="1"
+                            android:text="@{ztvvideomv.txtTypeVideo}"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="@color/colorGetDone" />
+
+                        <TextView
+                            android:id="@+id/label_descripDetail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_below="@id/label_artistDetail"
+                            android:text="Độ dài:"
+                            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                        <TextView
+                            android:id="@+id/descrip_songDetail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/artist_songDetail"
+                            android:layout_marginLeft="10dp"
+                            android:layout_toRightOf="@id/label_descripDetail"
+                            android:text="@{ztvvideomv.txtDuration}"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="@color/colorGetDone" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+</layout>

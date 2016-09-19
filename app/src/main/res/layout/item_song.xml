@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data class="AlbumItemSongBinding">
+        <variable
+            name="z3albummv"
+            type="nb.cblink.zing.viewmodel.ZingMP3AlbumSongModelView" />
+        <variable
+            name="song"
+            type="nb.cblink.zing.model.AlbumSong.Doc" />
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginRight="1dp"
+        card_view:cardBackgroundColor="@color/colorCardView"
+        card_view:cardCornerRadius="4dp"
+        android:onClick="@{() -> z3albummv.clickSong(song)}">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:orientation="vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/icon_song"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/song_icon"
+                app:imageUrl="@{song.thumbnail}"/>
+
+            <ImageButton
+                android:id="@+id/share_song_album"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:background="#00000000"
+                android:scaleType="fitCenter"
+                android:src="@drawable/share"
+                android:layout_marginBottom="5dp"
+                android:onClick="@{() -> z3albummv.clickShareSong(song)}"/>
+
+            <ImageButton
+                android:id="@+id/download_song_album"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_toLeftOf="@id/share_song_album"
+                android:background="#00000000"
+                android:scaleType="fitCenter"
+                android:src="@drawable/download"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="10dp"
+                android:onClick="@{() -> z3albummv.clickDownload(song)}"/>
+
+
+
+            <TextView
+                android:id="@+id/song_name_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toLeftOf="@id/download_song_album"
+                android:layout_toRightOf="@id/icon_song"
+                android:ellipsize="end"
+                android:lines="1"
+                android:text="@{song.title}"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                android:id="@+id/sonng_artis_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/song_name_detail"
+                android:layout_toLeftOf="@id/download_song_album"
+                android:layout_toRightOf="@id/icon_song"
+                android:ellipsize="end"
+                android:lines="1"
+                android:text="@{song.artist}"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <TextView
+                android:id="@+id/song_dual"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/sonng_artis_detail"
+                android:layout_toRightOf="@id/icon_song"
+                android:ellipsize="end"
+                android:lines="1"
+                android:text="@{Integer.toString(song.duration) + 's'}"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</layout>
